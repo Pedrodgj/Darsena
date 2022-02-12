@@ -8,12 +8,12 @@ routes.post('/send-email', async(req, res) => {
     const {email, mensaje, nombre} = req.body;
 
     let contentHTML = `
-        <h1>Informacion de Cliente</h1>
+        <h2>Informacion de Cliente</h2>
         <ul>
-            <li><h2>Nombre: ${nombre}.</h2></li>
-            <li><h2>Email: ${email}</h2></li>
+            <li>Nombre: ${nombre}</li>
+            <li>Email: ${email}</li>
         </ul>
-        <h2>${mensaje}</h2>
+        <p>${mensaje}</p>
     `;    
 
     const transporter = nodemailer.createTransport({
@@ -27,19 +27,14 @@ routes.post('/send-email', async(req, res) => {
         },
     });
 
-    let info = await transporter.sendMail(({
+    await transporter.sendMail(({
         from: `"Informacion cliente Darsena" <${email}>`, // sender address
         to: process.env.EMAILDESTINO, // list of receivers
         subject: "Información", // Subject line
         html: contentHTML, // html body
       }));
 
-    res.json({
-        msg: 'Recibido de',
-        respuesta: info.envelope.from
-    })
-     
-
+    res.redirect('/')
 })
 
 module.exports = routes

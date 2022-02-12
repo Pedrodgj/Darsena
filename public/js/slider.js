@@ -56,4 +56,6 @@ $(document).ready(function () {
         intervalo = setInterval(moverDerecha, 5000);
     }
 
+    //slider.css('display', 'none')
+
 });
