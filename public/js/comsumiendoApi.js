@@ -52,7 +52,7 @@ const cargarImagenes = async(tipo = '') => {
                         <img src="${producto.imagen}" alt="" width="300" height="220">
                         <h2>${producto.nombre}</h2>
                         <p>${producto.descripcion}</p>
-                        <h4>${producto.tipo}</h4>
+                        <p><i>${producto.tipo}</i><p>
                     </div>
             `
             }
