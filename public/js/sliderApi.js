@@ -1,6 +1,6 @@
 $(document).ready(function () {  
     
-    apiUrl = "http://localhost:8010/api/productos"
+    apiUrl = "https://darsena17catalogo.herokuapp.com/api/productos"
     
     $.ajax({  
         type: "GET",  

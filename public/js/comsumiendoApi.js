@@ -3,7 +3,7 @@ let menu = document.querySelectorAll('.mini');
 
 const errorProductos = document.querySelector('#errorProducto')
 
-const API_URL = 'http://localhost:8010/api'
+const API_URL = 'https://darsena17catalogo.herokuapp.com/api'
 
 let valor = menu.forEach( e => e.addEventListener('click', (e) => {
     //e.preventDefault();
